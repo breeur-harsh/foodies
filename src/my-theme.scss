@@ -1,0 +1,43 @@
+@import "~@angular/material/theming";
+@include mat-core();
+
+$foodies-red: (
+  50: #e8eaf6,
+  100: #c5cae9,
+  200: #9fa8da,
+  300: #632324,
+  400: #753132,
+  500: #ed2124,
+  600: #c52a2d,
+  700: #ed2124,
+  800: #000000,
+  900: #ed2124,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $light-primary-text,
+    400: $light-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+  ),
+);
+
+$my-theme-primary: mat-palette($foodies-red);
+$my-theme-accent: mat-palette($mat-pink, A200, A100, A400);
+$my-theme-warn: mat-palette($mat-red);
+
+$my-theme: mat-light-theme(
+  (
+    color: (
+      primary: $my-theme-primary,
+      accent: $my-theme-accent,
+      warn: $my-theme-warn,
+    ),
+  )
+);
+
+@include angular-material-theme($my-theme);
