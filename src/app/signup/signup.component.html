@@ -1,0 +1,83 @@
+<div class="login-bg" style="height: 100vh">
+  <div class="d-flex h-100 justify-content-center align-items-center">
+    <mat-card style="width: 21rem">
+      <form
+        [formGroup]="signUpForm"
+        (ngSubmit)="onSignUp()"
+        class="d-flex flex-column justify-content-center align-items-center"
+      >
+        <img
+          src="/assets/img/logo.png"
+          alt="logo"
+          class="img-fluid mx-auto mb-4 mt-3"
+          width="80px"
+          height="80px"
+        />
+        <mat-form-field appearance="legacy" class="w-100">
+          <mat-label>Enter your Name</mat-label>
+          <input
+            matInput
+            type="text"
+            placeholder="john@example.com"
+            name="text"
+            formControlName="name"
+            required
+          />
+          <mat-error *ngIf="this.signUpForm.get('name').invalid">{{
+            getErrorMessage("name")
+          }}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="legacy" class="w-100">
+          <mat-label>Enter your email</mat-label>
+          <input
+            matInput
+            type="text"
+            placeholder="john@example.com"
+            name="email"
+            formControlName="email"
+            required
+          />
+          <mat-error *ngIf="this.signUpForm.get('email').invalid">{{
+            getErrorMessage("email")
+          }}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="legacy" class="w-100">
+          <mat-label>Enter your password</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'" />
+          <button
+            mat-icon-button
+            matSuffix
+            (click)="hide = !hide"
+            [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide"
+          >
+            <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+          </button>
+        </mat-form-field>
+        <mat-form-field appearance="legacy" class="w-100">
+          <mat-label>Confirm Password</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'" />
+          <button
+            mat-icon-button
+            matSuffix
+            (click)="hide = !hide"
+            [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide"
+          >
+            <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+          </button>
+        </mat-form-field>
+        <button mat-raised-button color="primary" class="w-100">SIGNUP</button>
+        <button
+          type="button"
+          routerLink="/"
+          mat-raised-button
+          color="primary"
+          class="w-100 my-2"
+        >
+          SWITCH TO LOGIN
+        </button>
+      </form>
+    </mat-card>
+  </div>
+</div>
