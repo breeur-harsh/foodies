@@ -32,8 +32,8 @@ export class HomeComponent implements OnInit {
             type: 'line',
             label: 'SALES DATA',
             data: this.sales,
-            backgroundColor: 'rgba(255,0,255,0.4)',
-            borderColor: 'rgba(255,0,255,0.4)',
+            backgroundColor: '#ED2124',
+            borderColor: 'rgba(237, 33, 36, 0.75)',
             fill: false,
           },
         ]
@@ -60,7 +60,7 @@ export class HomeComponent implements OnInit {
         datasets: [{
           data: [1, 2, 5],
           backgroundColor: [
-            'red', 'yellow', 'green'
+            '#ED2124', 'yellow', 'green'
           ]
         }
         ]

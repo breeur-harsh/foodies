@@ -1,15 +1,31 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" fixedInViewport
-      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-      [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [opened]="(isHandset$ | async) === false">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false"
+  >
     <mat-toolbar>
-      <img src="/assets/img/logohorizontalblack.png" alt="logo" class="img-fluid mx-auto" width="150px" height="50px">
+      <img
+        src="/assets/img/logohorizontalblack.png"
+        alt="logo"
+        class="img-fluid mx-auto"
+        width="150px"
+        height="50px"
+      />
     </mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item routerLink="home" routerLinkActive="active"><mat-icon>home</mat-icon> Dashboard</a>
-      <a mat-list-item routerLink="add-user"><mat-icon>account_box</mat-icon>Add User</a>
-      <a mat-list-item routerLink="users-list"><mat-icon>list</mat-icon>List all users</a>
+      <a mat-list-item routerLink="home" routerLinkActive="active"
+        ><mat-icon>home</mat-icon> Dashboard</a
+      >
+      <a mat-list-item routerLink="add-user"
+        ><mat-icon>account_box</mat-icon>Add User</a
+      >
+      <a mat-list-item routerLink="users-list"
+        ><mat-icon>list</mat-icon>List all users</a
+      >
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -19,11 +35,12 @@
         aria-label="Toggle sidenav"
         mat-icon-button
         (click)="drawer.toggle()"
-        *ngIf="isHandset$ | async">
+        *ngIf="isHandset$ | async"
+      >
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <span>foodies</span>
-      <a routerLink="home" class="ml-auto text-white">Logout</a>
+      <button type="button" (click)="onLogOut()" class="btn ml-auto text-white">Logout</button>
     </mat-toolbar>
     <!-- Add Content Here -->
     <router-outlet></router-outlet>

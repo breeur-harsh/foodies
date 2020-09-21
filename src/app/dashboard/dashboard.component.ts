@@ -3,6 +3,7 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,7 +12,7 @@ import { AuthService } from '../auth.service';
 })
 export class DashboardComponent {
   emailData = this.auth.email;
-  constructor(private breakpointObserver: BreakpointObserver, private auth: AuthService) { }
+  constructor(private breakpointObserver: BreakpointObserver, private auth: AuthService, private router: Router) { }
 
   // By Material
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
@@ -20,5 +21,8 @@ export class DashboardComponent {
       shareReplay()
     );
   // -------------------------------------------
+  onLogOut(): void {
+    this.router.navigate(['/']);
+  }
 
 }
