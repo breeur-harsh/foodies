@@ -1,0 +1,81 @@
+<mat-grid-list
+  [cols]="breakpoint"
+  rowHeight="2:1"
+  (window:resize)="onResize($event)"
+  gutterSize="0"
+  class="mb-2"
+>
+  <mat-grid-tile>
+    <div class="bg-warning w-75 h-75 rounded shadow">
+      <div
+        class="bg-info h-50 d-flex justify-content-center align-items-center"
+      >
+        <mat-icon class="bg-danger">point_of_sale</mat-icon>
+      </div>
+      <div
+        class="h-25 d-flex bg-danger justify-content-center align-items-center counter-icon-text"
+      >
+        Users
+      </div>
+      <div class="h-25 d-flex justify-content-center counter-icon-number">
+        33K
+      </div>
+    </div>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <div class="bg-warning w-75 h-75 rounded shadow">
+      <div
+        class="bg-info h-50 d-flex justify-content-center align-items-center"
+      >
+        <mat-icon class="bg-danger">supervised_user_circle</mat-icon>
+      </div>
+      <div
+        class="h-25 d-flex bg-danger justify-content-center align-items-center counter-icon-text"
+      >
+        HR Admins
+      </div>
+      <div class="h-25 d-flex justify-content-center counter-icon-number">
+        22
+      </div>
+    </div>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <div class="bg-warning w-75 h-75 rounded shadow">
+      <div
+        class="bg-info h-50 d-flex justify-content-center align-items-center"
+      >
+        <mat-icon class="bg-danger">people</mat-icon>
+      </div>
+      <div
+        class="h-25 d-flex bg-danger justify-content-center align-items-center counter-icon-text"
+      >
+        Vendors
+      </div>
+      <div class="h-25 d-flex justify-content-center counter-icon-number">
+        22
+      </div>
+    </div>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <div class="bg-warning w-75 h-75 rounded shadow">
+      <div
+        class="bg-info h-50 d-flex justify-content-center align-items-center"
+      >
+        <mat-icon class="bg-danger">local_shipping</mat-icon>
+      </div>
+      <div
+        class="h-25 d-flex bg-danger justify-content-center align-items-center counter-icon-text"
+      >
+        Deliveries
+      </div>
+      <div class="h-25 d-flex justify-content-center counter-icon-number">
+        37
+      </div>
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>
+
+<section class="row">
+  <div class="col-md-6 col-sm-12"><canvas id="lineChart"></canvas></div>
+  <div class="col-md-6 col-sm-12"><canvas id="pieChart"></canvas></div>
+</section>

@@ -1,6 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-signup',
@@ -10,7 +12,7 @@ import { Router } from '@angular/router';
 export class SignupComponent implements OnInit {
   signUpForm: FormGroup;
   hide = false;
-  constructor(private router: Router) { }
+  constructor(private router: Router, private http: HttpClient, private auth: AuthService) { }
 
   ngOnInit(): void {
     this.signUpForm = new FormGroup({
@@ -30,7 +32,19 @@ export class SignupComponent implements OnInit {
   }
 
   onSignUp(): void {
-    this.router.navigate(['login']);
+    const name = this.signUpForm.value.name;
+    const email = this.signUpForm.value.email;
+    const password = this.signUpForm.value.password;
+    // TODO: Hit the post api for registeration
+    // this.http.post('http://breeur.in/food/register.php', {
+    //   email,
+    //   name,
+    //   password
+    // }).subscribe((resData) => {
+    //   this.auth.email = resData.email;
+    //   console.log(resData);
+    // });
+    // this.router.navigate(['/']);
   }
 
 }

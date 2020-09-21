@@ -11,7 +11,7 @@ export class LoginComponent implements OnInit {
   // Reactive form for login
   loginForm: FormGroup;
 
-  // Toggle eye button for password
+  // Toggle eye button for password Material variable
   hide = true;
   constructor(private router: Router) { }
 
@@ -28,7 +28,9 @@ export class LoginComponent implements OnInit {
     }
     return this.loginForm.get('email').hasError('email') ? 'Not a valid email' : '';
   }
+  // --------------------------------
   onLogin(): void {
+    // TODO: login endpoint with JWT.
     this.router.navigate(['dashboard']);
   }
 }
